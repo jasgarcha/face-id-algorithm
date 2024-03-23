@@ -3,6 +3,7 @@ A work-in-progress implementation of an algorithm for biometric facial identific
 
 ## Logic
 Algorithm:
+
 Start with 2 matrices represented by 2-dimensional arrays.
 1) Matrices -> vectors (column vector size = matrix number of rows * matrix number of columns).
 
@@ -29,7 +30,7 @@ Let `S` be a set of `M` face images. `S = {T1, T2,...TM}`.
 ...
 
 ## Todo
-Implement rest of algorithm:
+Implement remainder of algorithm:
 
 Add scalars that acts as a weight `w_j` to the eigenvector in the linear combination expression for representing the original image.
 
