@@ -61,12 +61,12 @@ public class FaceId {
 		}
 		System.out.println("A = "+A);
 		
-		//A tranpose times A. ATA.
+		//A transpose times A. ATA.
 		RealMatrix ATransposeTimesA = A.transpose().multiply(A);
 		//System.out.println("ATransposeTimesA = "+A.transpose()+"*"+A+" = "+ATransposeTimesA);
 		System.out.println("ATransposeTimesA = "+ATransposeTimesA);
 
-		//4. Work around: Find the eigenvalues and eigenvectors of A tranpose times A.
+		//4. Work around: Find the eigenvalues and eigenvectors of A transpose times A.
 		EigenDecomposition eigenDecompositionATransposeTimesA = new EigenDecomposition(ATransposeTimesA);
 		RealMatrix eigenValueMatrix = eigenDecompositionATransposeTimesA.getD(); //Gets the block diagonal matrix D of the decomposition. D is a block diagonal matrix. Real eigenvalues are on the diagonal while complex values are on 2x2 blocks { {real +imaginary}, {-imaginary, real} }.
 		RealMatrix eigenVectorMatrix = eigenDecompositionATransposeTimesA.getV(); //Gets the matrix V of the decomposition. 
@@ -80,7 +80,7 @@ public class FaceId {
 			eigenVector[i] = eigenDecompositionATransposeTimesA.getEigenvector(i);
 		}		
 	
-		//4.5. Get eigenvalues and eigenvectors of M, not the work around ATA. u = Av.
+		//4.1. Get eigenvalues and eigenvectors of M, not the work around ATA. u = Av.
 		RealVector u[] = new RealVector[eigenVector.length];
 		for(int i = 0; i < eigenVector.length; i++) {
 			u[i] = A.operate(eigenVector[i]); //Eigenvector of M. w = Av.
