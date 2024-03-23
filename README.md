@@ -19,7 +19,7 @@ Let `S` be a set of `M` face images. `S = {T1, T2,...TM}`.
 
 4) Work around: Find the eigenvalues and eigenvectors of `A` transpose times `A`.
 
- 4.1. Get eigenvalues and eigenvectors of `M`, not the work around `ATA`. `u = Av`.
+4.1) Get eigenvalues and eigenvectors of `M`, not the work around `ATA`. `u = Av`.
 
 5) Compute normalized eigenvector.
 
